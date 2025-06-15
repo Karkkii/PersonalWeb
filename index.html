@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Karkkii</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #0a3d62, #1e90ff);
+    font-family: 'Montserrat', sans-serif;
+    color: #e0f2ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 15px #64a0ff;
+    animation: glowText 3s ease-in-out infinite;
+  }
+
+  p.description {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    color: #cde7ff;
+  }
+
+  .btn-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  a.button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0a3d62;
+    background: #a3cef1;
+    border-radius: 40px;
+    box-shadow: 0 0 20px #63a3ffaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  a.button:hover {
+    background: #6aafff;
+    color: #e0f2ff;
+    box-shadow: 0 0 30px #3385ff;
+  }
+
+  a.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -25%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg) translateX(-100%);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+  }
+
+  a.button:hover::before {
+    transform: skewX(-25deg) translateX(200%);
+  }
+
+  /* Animointi tekstille */
+  @keyframes glowText {
+    0%, 100% {
+      text-shadow:
+        0 0 10px #64a0ff,
+        0 0 20px #4290ff,
+        0 0 30px #2c7dff;
+      color: #cce6ff;
+    }
+    50% {
+      text-shadow:
+        0 0 20px #8fcfff,
+        0 0 30px #67baff,
+        0 0 40px #4aa8ff;
+      color: #e0f7ff;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p.description {
+      font-size: 1rem;
+    }
+    .btn-container {
+      gap: 1rem;
+      flex-direction: column;
+    }
+    a.button {
+      width: 100%;
+      padding: 1rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Karkkii</h1>
+  <p class="description">
+    Harrastukseni: Jääkiekko, teen Minecraft palvelimia. Esim. Kivikko, MansikkaMC.<br />
+  </p>
+
+  <div class="btn-container">
+    <a href="mailto:minecraft.karkkiii@gmail.com" class="button" aria-label="Sähköposti">📧 Email</a>
+    <a href="https://discord.com/users/karkkii09" target="_blank" rel="noopener" class="button" aria-label="Discord">💬 Discord</a>
+    <a href="view/tos" target="_blank" aria-label="My terms" rel="noopener" class="button">📜 My terms</a>
+  </div>
+</body>
+</html>
